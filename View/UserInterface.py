@@ -16,6 +16,9 @@ class UserInterface:
     def display_msg(self, msg):
         self.io.display(msg)
 
+    def prompt_id(self):
+        return self.user_prompt("Please input bookmark ID.")
+
     def menu(self):
         return ["Add Bookmark", "Remove Bookmark", "View Bookmark", "View All Bookmark", "Exit"]
 
@@ -36,5 +39,13 @@ class UserInterface:
         return new_bookmark
 
     def display_all_bookmarks(self, bookmarks):
+
+        self.io.display("=== List Of Your Bookmarks ===\n ")
+
         for bookmark in bookmarks:
             self.io.display(f" IDno. [{bookmark.bookmark_id}] {bookmark.title} {bookmark.description} {bookmark.url}")
+
+        self.io.display("")
+
+    def display_bookmark(self, bookmark):
+        self.io.display(f" IDno. [{bookmark.bookmark_id}] {bookmark.title} {bookmark.description} {bookmark.url}")

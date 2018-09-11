@@ -16,8 +16,8 @@ class DaoImpl(ABC):
 
     @abstractmethod
     def view_bookmark_by_id(self, id):
-        assert (id, int)
-        return self.database.get(id)
+        bookmark = self.database[id]
+        return bookmark
 
     @abstractmethod
     def view_all_bookmarks(self):

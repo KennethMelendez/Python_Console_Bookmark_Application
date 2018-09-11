@@ -13,7 +13,7 @@ class ServiceLayerImpl(ABC):
 
     @abstractmethod
     def view_bookmark_by_id(self, id):
-        self.dao.view_bookmark_by_id(id)
+        return self.dao.view_bookmark_by_id(id)
 
     @abstractmethod
     def view_all_bookmarks(self):

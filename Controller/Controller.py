@@ -1,5 +1,3 @@
-
-
 class Controller:
 
     def __init__(self, ui, sl):
@@ -19,6 +17,9 @@ class Controller:
             if user_response == str(1):
                 self.add_bookmark()
 
+            if user_response == str(3):
+                self.display_bookmark()
+
             if user_response == str(4):
                 self.display_all_bookmarks()
 
@@ -37,3 +38,8 @@ class Controller:
 
     def display_all_bookmarks(self):
         self.ui.display_all_bookmarks(self.sl.view_all_bookmarks())
+
+    def display_bookmark(self):
+        bookmark_id = self.ui.prompt_id()
+        bookmark = self.sl.view_bookmark_by_id(int(bookmark_id))
+        self.ui.display_bookmark(bookmark)
