@@ -18,3 +18,7 @@ class ServiceLayerImpl(ABC):
     @abstractmethod
     def view_all_bookmarks(self):
         return self.dao.view_all_bookmarks()
+
+    @abstractmethod
+    def remove_bookmark_by_id(self, bookmark_id):
+        self.dao.remove_bookmark_by_id(bookmark_id)

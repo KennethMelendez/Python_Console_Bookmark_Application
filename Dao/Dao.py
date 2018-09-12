@@ -10,3 +10,6 @@ class Dao(DaoImpl):
 
     def view_all_bookmarks(self):
         return super().view_all_bookmarks()
+
+    def remove_bookmark_by_id(self, bookmark_id):
+        super().remove_bookmark_by_id(bookmark_id)

@@ -22,3 +22,8 @@ class DaoImpl(ABC):
     @abstractmethod
     def view_all_bookmarks(self):
         return list(self.database.values())
+
+    @abstractmethod
+    def remove_bookmark_by_id(self, bookmark_id):
+        del self.database[int(bookmark_id)]
+
