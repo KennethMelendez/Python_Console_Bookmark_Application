@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from Exception.PersistanceException import PersistenceException
 
 
 class DaoImpl(ABC):

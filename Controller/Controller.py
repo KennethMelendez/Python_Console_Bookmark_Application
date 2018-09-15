@@ -7,32 +7,35 @@ class Controller:
         self.sl = sl
 
     def run(self):
-        self.ui.welcome_banner()
-        startProgram = True
-        while startProgram == True:
-            self.ui.main_menu()
-            user_response = self.user_prompt()
-            self.display_user_response(user_response)
+        try:
+            self.ui.welcome_banner()
+            start_program = True
+            while start_program == True:
+                self.ui.main_menu()
+                user_response = self.user_prompt()
+                self.display_user_response(user_response)
 
-            # ADD BOOKMARK CODE
-            if user_response == str(1):
-                self.add_bookmark()
+                # ADD BOOKMARK CODE
+                if user_response == str(1):
+                    self.add_bookmark()
 
-            # REMOVE BOOKMARK
-            if user_response == str(2):
-                self.remove_bookmark()
+                # REMOVE BOOKMARK
+                if user_response == str(2):
+                    self.remove_bookmark()
 
-            # DISPLAY BOOKMARK CODE
-            if user_response == str(3):
-                self.display_bookmark()
+                # DISPLAY BOOKMARK CODE
+                if user_response == str(3):
+                    self.display_bookmark()
 
-            # DISPLAY ALL BOOKMARKS CODE
-            if user_response == str(4):
-                self.display_all_bookmarks()
+                # DISPLAY ALL BOOKMARKS CODE
+                if user_response == str(4):
+                    self.display_all_bookmarks()
 
-            # END PROGRAM CODE
-            if user_response == str(len(self.ui.menu())):
-                startProgram = False
+                # END PROGRAM CODE
+                if user_response == str(len(self.ui.menu())):
+                    start_program = False
+        except Exception:
+            self.ui.error_message()
 
     def user_prompt(self):
         return self.ui.user_prompt("Please input response")

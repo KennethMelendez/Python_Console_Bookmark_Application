@@ -49,3 +49,6 @@ class UserInterface:
 
     def display_bookmark(self, bookmark):
         self.io.display(f" IDno. [{bookmark.bookmark_id}] {bookmark.title} {bookmark.description} {bookmark.url}")
+
+    def error_message(self):
+        self.io.display("Error has occured. Please try again.")
